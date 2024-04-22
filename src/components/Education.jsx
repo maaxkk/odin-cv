@@ -14,6 +14,7 @@ function Education(props) {
 
     function handleAddEdu() {
         setAddEdu(prevAddEdu => {
+
             return !prevAddEdu;
         });
     }
@@ -41,9 +42,9 @@ function Education(props) {
             </button>
             {isActive && <div className={'education--section'}>
                 {schools}
-                {!addEdu ? <button onClick={handleAddEdu} className={'education--plus-cont'}>
+                <button onClick={handleAddEdu && props.handleCreate} className={'education--plus-cont'}>
                     <div className={'education--plus'}><i className="fa-solid fa-plus"></i> Education</div>
-                </button> : <AddEducation school={props.education[props.education.length-1]} handleChange={(e) => props.handleChange(e, props.education.length)}/>}
+                </button>
             </div>
             }
 

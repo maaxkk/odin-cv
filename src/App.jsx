@@ -40,11 +40,11 @@ function App() {
             return [...prevEducation,
                 {
                     id: prevEducation.length + 1,
-                    school: '',
-                    degree: '',
-                    startDate: '',
-                    endDate: '',
-                    location: '',
+                    school: 'New school',
+                    degree: 'null',
+                    startDate: 'null',
+                    endDate: 'null',
+                    location: 'null',
                     show: false,
                 }
             ]
