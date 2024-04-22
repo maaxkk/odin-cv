@@ -1,0 +1,28 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --bradius: .6rem;
+}
+
+button {
+  background-color: white;
+  border-style: none;
+  cursor: pointer;
+}
+
+.app {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px 350px 1.25fr 1.25fr;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 1rem;
+}

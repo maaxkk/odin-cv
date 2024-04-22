@@ -1,0 +1,40 @@
+
+.cvbody {
+    grid-column: 2 / 4;
+    grid-row: 1 / 5;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 300px 2fr 1fr;
+    width: 63vw;
+}
+
+.cvbody--personal {
+    background-color: #0E374E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: .75rem;
+    font-size: 1.25rem;
+}
+
+.cvbody--contacts {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cvbody--edu {
+    color: #0E374E;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cvbody--edu > h2 {
+    width: 80%;
+    background-color: #EFF0F2 ;
+    text-align: center;
+}
+
+

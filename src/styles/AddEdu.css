@@ -1,0 +1,27 @@
+.add-edu {
+    background-color: white;
+    padding: 1.5rem 1.5rem 0;
+    margin-top: 0.5rem;
+    border-radius: var(--bradius);
+}
+
+.add-edu--button {
+    background-color: lightgreen;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: var(--bradius);
+    margin-bottom: 0.7rem;
+}
+
+.cancel {
+    background-color: lightcoral;
+    margin-left: 0.75rem;
+}
+
+.add-edu > label {
+    color: black;
+}
+
+.add-edu--wrapper {
+    height: 60px;
+}
