@@ -39,6 +39,18 @@ function App() {
         })
     }
 
+    function handleExpChange(event, id) {
+        const {name, value} = event.target;
+        setExperience(prevExperience => {
+            const newExperience = [...prevExperience]
+            newExperience.map(company => {
+                if (company.id === id) company[name] = value
+                return company
+            })
+            return newExperience
+        })
+    }
+
     function handleCreate() {
         setEducation(prevEducation => {
             return [...prevEducation,
@@ -55,15 +67,45 @@ function App() {
         })
     }
 
+    function handleExpCreate() {
+        setExperience(prevExperience => {
+            return [...prevExperience,
+                {
+                    id: prevExperience.length + 1,
+                    company: 'New company',
+                    position: 'Software Engineer',
+                    startDate: 'null',
+                    endDate: 'null',
+                    location: 'New York, USA',
+                    description: 'Designed new system...',
+                    show: false,
+                }
+            ]
+        })
+    }
+
     function handleDelete(id) {
         setEducation(prevEducation =>
             ([...prevEducation.filter(school => school.id !== id)]))
+    }
+
+    function handleExpDelete(id) {
+        setExperience(prevExperience =>
+            ([...prevExperience.filter(company => company.id !== id)]))
     }
 
     function handleShow(id) {
         setEducation(prevEducation => {
             return prevEducation.map(school => {
                 return {...school, show: school.id === id ? !school.show : false}
+            })
+        })
+    }
+
+    function handleExpShow(id) {
+        setExperience(prevExperinece => {
+            return prevExperinece.map(company => {
+                return {...company, show: company.id === id ? !company.show : false}
             })
         })
     }
@@ -76,14 +118,20 @@ function App() {
                           address={personalInfo.address}
                           handleChange={handleChange}
             />
-            <Education education={education} handleShow={handleShow} handleDelete={handleDelete} handleCreate={handleCreate} handleChange={handleEduChange}
+
+            <Education education={education} handleShow={handleShow} handleDelete={handleDelete} handleCreate={handleCreate}
+                       handleChange={handleEduChange}
             />
-            {/*<Experience experience={experience} />*/}
+
+            <Experience experience={experience} handleShow={handleExpShow} handleDelete={handleExpDelete} handleCreate={handleExpCreate}
+                        handleChange={handleExpChange} />
+
             <CVBody fullName={personalInfo.fullName}
                     email={personalInfo.email}
                     phone={personalInfo.phone}
                     address={personalInfo.address}
                     education={education}
+                    experience={experience}
             />
         </div>
     )

@@ -24,14 +24,14 @@
     gap: 0.5rem;
 }
 
-.cvbody--edu {
+.cvbody--edu, .cvbody--exp {
     color: #0E374E;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
 
-.cvbody--edu > h2 {
+.cvbody--edu > h2, .cvbody--exp > h2 {
     width: 80%;
     background-color: #EFF0F2 ;
     text-align: center;

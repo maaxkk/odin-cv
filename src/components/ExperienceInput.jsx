@@ -5,28 +5,28 @@ function ExperienceInput(props) {
     return (
         <div>
             <button className={'education--school'} onClick={props.handleShow}>
-                {props.school}
+                {props.company}
                 <div onClick={props.handleDelete} className={'education--delete'}><i className={'fa-solid fa-xmark'}></i></div>
             </button>
             {props.show && <div>
                 <div className="education--wrapper">
-                    <label htmlFor={id + '-school'}>School:</label>
+                    <label htmlFor={id + 'company'}>Company name:</label>
                     <input type="text"
-                           placeholder={'School...'}
-                           name={'school'}
-                           id={id + '-school'}
-                           value={props.school}
+                           placeholder={'Company...'}
+                           name={'company'}
+                           id={id + '-company'}
+                           value={props.company}
                            onChange={props.handleChange}
                            className={'education--input'}
                     />
                 </div>
                 <div className="education--wrapper">
-                    <label htmlFor={id + '-degree'}>Degree:</label>
+                    <label htmlFor={id + '-position'}>Position:</label>
                     <input type="text"
-                           placeholder={'Degree...'}
-                           name={'degree'}
-                           id={id + '-degree'}
-                           value={props.degree}
+                           placeholder={'Position...'}
+                           name={'position'}
+                           id={id + '-position'}
+                           value={props.position}
                            onChange={props.handleChange}
                            className={'education--input'}
                     />
@@ -60,6 +60,18 @@ function ExperienceInput(props) {
                            name={'location'}
                            id={id + '-location'}
                            value={props.location}
+                           onChange={props.handleChange}
+                           className={'education--input'}
+                    />
+                </div>
+                <div className="education--wrapper">
+                    <label htmlFor={id + '-description'}>Description:</label>
+                    <textarea
+                        rows={5}
+                           placeholder={'Designed user interface...'}
+                           name={'description'}
+                           id={id + '-description'}
+                           value={props.description}
                            onChange={props.handleChange}
                            className={'education--input'}
                     />

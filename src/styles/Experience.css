@@ -1,0 +1,42 @@
+.experience {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+}
+
+.experience--button {
+    height: 4rem;
+    width: 100%;
+    border-radius: var(--bradius) var(--bradius) 0 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+
+.fa-xmark {
+    font-size: 90%;
+}
+
+.experience--delete {
+    transition: background-color 0.25s;
+    border-radius: 50%;
+    width: 24px;
+}
+
+.experience--delete:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.experience--plus-cont {
+    margin-top: .5rem;
+    width: 100%;
+    border-radius: 0 0 var(--bradius) var(--bradius);
+    height: 5vh;
+}
+
+.experience--plus {
+    font-weight: bold;
+}
