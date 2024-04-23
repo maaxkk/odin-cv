@@ -1,7 +1,6 @@
 import '../styles/Education.css'
-import {useEffect, useId, useState} from "react";
+import {useState} from "react";
 import EducationInput from "./EducationInput.jsx";
-import AddEducation from "./AddEducation.jsx";
 
 function Education(props) {
 
@@ -14,7 +13,6 @@ function Education(props) {
 
     function handleAddEdu() {
         setAddEdu(prevAddEdu => {
-
             return !prevAddEdu;
         });
     }
@@ -27,6 +25,7 @@ function Education(props) {
                                endDate={school.endDate}
                                location={school.location}
                                show={school.show}
+                               handleDelete={() => props.handleDelete(school.id)}
                                handleChange={(e) => props.handleChange(e, school.id)}
                                handleShow={() => props.handleShow(school.id)}
         />
@@ -47,8 +46,6 @@ function Education(props) {
                 </button>
             </div>
             }
-
-
         </div>
     )
 }

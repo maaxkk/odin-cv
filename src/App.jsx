@@ -4,6 +4,8 @@ import {PersonalInfo} from "./components/PersonalInfo.jsx";
 import {CVBody} from "./components/CVBody.jsx";
 import {Education} from "./components/Education.jsx";
 import educationData from "./utils/education.js";
+import experienceData from "./utils/experience.js";
+import {Experience} from "./components/Experience.jsx";
 
 function App() {
     const [personalInfo, setPersonalInfo] = useState({
@@ -14,6 +16,8 @@ function App() {
     })
 
     const [education, setEducation] = useState(educationData)
+    const [experience, setExperience] = useState(experienceData)
+
 
     function handleChange(event) {
         const {name, value} = event.target;
@@ -51,6 +55,11 @@ function App() {
         })
     }
 
+    function handleDelete(id) {
+        setEducation(prevEducation =>
+            ([...prevEducation.filter(school => school.id !== id)]))
+    }
+
     function handleShow(id) {
         setEducation(prevEducation => {
             return prevEducation.map(school => {
@@ -67,8 +76,9 @@ function App() {
                           address={personalInfo.address}
                           handleChange={handleChange}
             />
-            <Education education={education} handleShow={handleShow} handleCreate={handleCreate} handleChange={handleEduChange}
+            <Education education={education} handleShow={handleShow} handleDelete={handleDelete} handleCreate={handleCreate} handleChange={handleEduChange}
             />
+            {/*<Experience experience={experience} />*/}
             <CVBody fullName={personalInfo.fullName}
                     email={personalInfo.email}
                     phone={personalInfo.phone}

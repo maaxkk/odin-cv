@@ -1,6 +1,6 @@
 import {useId, useState} from "react";
 
-function EducationInput(props) {
+function ExperienceInput(props) {
     const id = useId();
     return (
         <div>
@@ -69,4 +69,4 @@ function EducationInput(props) {
     )
 }
 
-export default EducationInput
+export default ExperienceInput
