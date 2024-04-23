@@ -4,12 +4,7 @@ import EducationInput from "./EducationInput.jsx";
 
 function Education(props) {
 
-    const [isActive, setIsActive] = useState(false)
-
     const [addEdu, setAddEdu] = useState(false)
-    function handleClick() {
-        setIsActive(prevActive => !prevActive)
-    }
 
     function handleAddEdu() {
         setAddEdu(prevAddEdu => {
@@ -33,13 +28,13 @@ function Education(props) {
 
     return (
         <div className={'education'}>
-            <button onClick={handleClick} className={'education--button'}>Education
+            <button onClick={props.handleActive} className={'education--button'}>Education
                 <div className={'education--arrow'}><i className={
-                    isActive
+                    props.isActive === 0
                         ? 'fa-solid fa-chevron-down chevron active'
                         : 'fa-solid fa-chevron-down chevron'}></i></div>
             </button>
-            {isActive && <div className={'education--section'}>
+            {props.isActive === 0 && <div className={'education--section'}>
                 {schools}
                 <button onClick={handleAddEdu && props.handleCreate} className={'education--plus-cont'}>
                     <div className={'education--plus'}><i className="fa-solid fa-plus"></i> Education</div>

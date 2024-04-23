@@ -18,6 +18,13 @@ function App() {
     const [education, setEducation] = useState(educationData)
     const [experience, setExperience] = useState(experienceData)
 
+    const [isActive, setIsActive] = useState(0)
+
+    function handleActive() {
+        setIsActive(prevActive => {
+            return prevActive = prevActive === 0 ? 1 : 0;
+        })
+    }
 
     function handleChange(event) {
         const {name, value} = event.target;
@@ -120,11 +127,11 @@ function App() {
             />
 
             <Education education={education} handleShow={handleShow} handleDelete={handleDelete} handleCreate={handleCreate}
-                       handleChange={handleEduChange}
+                       handleChange={handleEduChange} isActive={isActive} handleActive={handleActive}
             />
 
             <Experience experience={experience} handleShow={handleExpShow} handleDelete={handleExpDelete} handleCreate={handleExpCreate}
-                        handleChange={handleExpChange} />
+                        handleChange={handleExpChange} isActive={isActive} handleActive={handleActive}/>
 
             <CVBody fullName={personalInfo.fullName}
                     email={personalInfo.email}

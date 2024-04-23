@@ -17,6 +17,6 @@ export default [
         endDate: '02/2019',
         location: 'Berlin, Germany',
         description: 'Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.',
-        show: true,
+        show: false,
     },
 ]

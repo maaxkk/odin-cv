@@ -4,7 +4,7 @@
     grid-row: 1 / 5;
     background-color: white;
     display: grid;
-    grid-template-rows: 300px 2fr 1fr;
+    grid-template-rows: 300px min-content min-content;
     width: 63vw;
 }
 
@@ -22,6 +22,14 @@
 .cvbody--contacts {
     display: flex;
     gap: 0.5rem;
+}
+
+.cvbody--education {
+    grid-row: 2/3;
+}
+
+.cvbody--experinece {
+    grid-row: 3/ 4;
 }
 
 .cvbody--edu, .cvbody--exp {

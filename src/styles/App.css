@@ -19,7 +19,7 @@ button {
   background-color: blue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px 350px 1.25fr 1.25fr;
+  grid-template-rows: 200px 350px min-content min-content;
   column-gap: 1.5rem;
   row-gap: 1rem;
   min-width: 100vw;

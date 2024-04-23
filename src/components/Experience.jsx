@@ -4,13 +4,7 @@ import ExperienceInput from "./ExperienceInput.jsx";
 
 function Experience(props) {
 
-    const [isActive, setIsActive] = useState(false)
-
     const [newExperience, setNewExperinece] = useState(false)
-
-    function handleClick() {
-        setIsActive(prevActive => !prevActive)
-    }
 
     function handleAddEdu() {
         setNewExperinece(prevExperinece => {
@@ -35,13 +29,13 @@ function Experience(props) {
 
     return (
         <div className={'experience'}>
-            <button onClick={handleClick} className={'experience--button'}>Experience
+            <button onClick={props.handleActive} className={'experience--button'}>Experience
                 <div className={'experience--arrow'}><i className={
-                    isActive
+                    props.isActive === 1
                         ? 'fa-solid fa-chevron-down chevron active'
                         : 'fa-solid fa-chevron-down chevron'}></i></div>
             </button>
-            {isActive && <div className={'experience--section'}>
+            {props.isActive === 1 && <div className={'experience--section'}>
                 {companies}
                 <button onClick={handleAddEdu && props.handleCreate} className={'experience--plus-cont'}>
                     <div className={'experience--plus'}><i className="fa-solid fa-plus"></i> Experience</div>
